@@ -1,0 +1,19 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    
+    text-align: justify;
+    font-size: 125%;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+hr {
+    height: 20px;
+    background-color: white;
+    
+  }

@@ -1,0 +1,35 @@
+<h1>HEROES <small>Marvel y DC</small></h1>
+<hr>
+
+<div class="row">
+
+    <a (click)="mostrarHeroes()" class="btn btn-primary">Mostrar Heroes </a>
+
+    <a (click)="limpiar()" class="btn btn-primary">Ocultar Heroes </a>
+
+    <form class="d-flex" role="search">
+        <input #searchInput class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (keyup)="heroeEspecifico(searchInput.value)">
+        <a (click)="heroeEspecifico(searchInput.value)" class="btn btn-primary">VerHeroe</a>
+    </form>
+
+
+    <div *ngIf="mostrarListaHeroes" class="row">
+
+        <div class="col" *ngFor="let heroe of heroes; let i = index">
+            <div class="card" style="width: 18rem;">
+
+                <img [src]="heroe.img" class="card-img-top" alt="imagen del heroe">
+                <div class="card-body">
+
+                    <h5 class="card-title">{{heroe.nombre}}</h5>
+                    <p class="card-text">{{heroe.bio}}</p>
+                    <a (click)="verHeroe(i)" class="btn btn-primary">{{heroe.casa}}</a>
+                    <p class="card-text"><small class="text-body-secondary">{{heroe.aparicion}}</small></p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
